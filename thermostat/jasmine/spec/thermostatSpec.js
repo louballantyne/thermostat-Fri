@@ -28,4 +28,12 @@ describe('Thermostat', function(){
       expect(function() { thermostat.down(); } ).toThrow(new Error("Temperature already at minimum"))
     });
   });
+
+  describe('power saving mode', function(){
+    it("won't increase the temperature beyond 25 degrees in power saving mode", function(){
+      thermostat.temperature = 25;
+      thermostat.powerSaving = true;
+      expect(function() { thermostat.up(); } ).toThrow(new Error("Cannot exceed 25 degrees in Power Saving Mode"))
+    });
+  });
 });
