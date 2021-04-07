@@ -8,7 +8,13 @@ class Thermostat{
   }
 
   down() {
+    if (this.temperature === 10){
+      var error = new Error ( "Temperature already at minimum");
+      throw error ;
+    }
+    else {
     this.temperature -= 1;
+    }
   }
 
 }
