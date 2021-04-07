@@ -1,16 +1,25 @@
 <!DOCTYPE html>
+<link rel="stylesheet" href="style.css" type="text/css">
 <html>
 <body>
   <div class="grid-container">
-    <div class="grid-display">Current Temp</div>
-    <div class="grid-display">Target Temp</div>
-    <div class="grid-display">Power Saving Mode</div>
-    <div class="grid-meter">Energy Usage</div>
-    <button class="grid-button">Reset</button>
-    <button class="grid-button">Up</button>
-    <button class="grid-button">Down</button>
-    <button class="grid-button">Change Mode</button>
+    <div class="column">
+      <div class="grid-display">Current Temp</div>
+      <button class="grid-button">Reset</button>
     </div>
+    <div class="grid-item">
+      <div class="grid-display">Target Temp</div>
+      <button class="grid-button">Up</button>
+      <button class="grid-button">Down</button>
+    </div>
+    <div class="grid-item">
+      <div class="grid-display">Power Saving Mode</div>
+      <button class="grid-button">Change Mode</button>
+    </div>
+    <div class="grid-item">
+      <div class="grid-meter">Energy Usage</div>
+    </div>
+  </div>
 </body>
 
 </html>
