@@ -35,5 +35,28 @@ describe('Thermostat', function(){
       thermostat.powerSaving = true;
       expect(function() { thermostat.up(); } ).toThrow(new Error("Cannot exceed 25 degrees in Power Saving Mode"))
     });
+
+    it('won\'t increase the temperature beyond 32 degrees in non power saving mode', function(){
+      thermostat.temperature = 32;
+      thermostat.powerSaving = false;
+      expect(function() {thermostat.up(); } ).toThrow(new Error("Cannot exceed 32 degrees"));
+    });
+
+    it('is on by default', function(){
+      expect(thermostat.powerSaving).toEqual(true);
+    });
+
+    it('can be changed to false', function(){
+      thermostat.changeMode();
+      expect(thermostat.powerSaving).toEqual(false);
+    });
+  });
+
+  describe('reset function', function(){
+    it('resets the temperature to 20 when run', function(){
+      thermostat.temerature = 25;
+      thermostat.reset();
+      expect(thermostat.temperature).toEqual(20);
+    });
   });
 });

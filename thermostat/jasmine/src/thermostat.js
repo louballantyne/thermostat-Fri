@@ -1,15 +1,19 @@
 class Thermostat{
   constructor() {
     this.temperature = 20;
-    this.powerSaving = false;
+    this.powerSaving = true;
   }
 
   up() {
     if (this.powerSaving === true && this.temperature == 25){
-      var error = new Error ("Cannot exceed 25 degrees in Power Saving Mode");
-      throw error;
+      var error1 = new Error ("Cannot exceed 25 degrees in Power Saving Mode");
+      throw error1;
     }
-    else{
+    else if (this.temperature === 32){
+      var error2 = new Error ("Cannot exceed 32 degrees");
+      throw error2;
+    }
+    else {
     this.temperature +=  1;
     }
   }
@@ -22,6 +26,14 @@ class Thermostat{
     else {
     this.temperature -= 1;
     }
+  }
+
+  changeMode() {
+    this.powerSaving = !this.powerSaving
+  }
+
+  reset() {
+    this.temperature = 20
   }
 
 }
