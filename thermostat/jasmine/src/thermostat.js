@@ -4,6 +4,15 @@ class Thermostat{
     this.powerSaving = true;
   }
 
+  getTemperature () {
+  return this.temperature;
+  }
+
+  setTemperature (temp) {
+  return this.temperature = temp;
+  }
+
+
   up() {
     if (this.powerSaving === true && this.temperature == 25){
       var error1 = new Error ("Cannot exceed 25 degrees in Power Saving Mode");
