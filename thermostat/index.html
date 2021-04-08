@@ -2,25 +2,22 @@
 <link rel="stylesheet" href="style.css" type="text/css">
 <html>
 <head>
-  <style>
-    a.test {
-        font-weight: bold;
-    }
-  </style>
 <body>
-  <a href="http://jquery.com/">jQuery</a>
+
 
   <script src="jquery.js"></script>
   <script src="jasmine/src/thermostat.js"></script>
+  <script src="jasmine/src/interface.js"></script>
+
   <div class="grid-container">
     <div class="column">
       <div class="grid-display">Current Temp</div>
-      <button class="grid-button">Reset</button>
+      <button class="grid-button" id="reset">Reset</button>
     </div>
     <div class="grid-item">
       <div class="grid-display">Target Temp</div>
-      <button class="grid-button">Up</button>
-      <button class="grid-button">Down</button>
+      <button class="grid-button" id="up">Up</button>
+      <button class="grid-button" id="down">Down</button>
     </div>
     <div class="grid-item">
       <div class="grid-display">Power Saving Mode</div>
@@ -31,23 +28,7 @@
     </div>
   </div>
 
-  <script>
-    $( document ).ready(function() {
-      $( "#mode" ).click(function( event ) {
-        alert("Thanks for clicking a button!");
-        //event.preventDefault();
-      });
-    });
-    $( "a" ).addClass( "test" );
-    $( "a" ).removeClass( "test" );
-    $( "a" ).click(function( event ) {
 
-        event.preventDefault();
-
-        $( this ).hide( "slow" );
-
-    });
-    </script>
 </body>
 
 </html>
